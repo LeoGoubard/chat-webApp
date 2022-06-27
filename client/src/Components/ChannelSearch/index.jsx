@@ -30,7 +30,7 @@ const ChannelSearch = () => {
                 <SearchIcon />
                 <input
                     className="channel-search__input__text"
-                    placeholder="Searchh"
+                    placeholder="Search"
                     type="text"
                     value={query}
                     onChange={(evt) => onSearch(evt)}    
