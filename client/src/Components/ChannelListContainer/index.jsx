@@ -7,7 +7,12 @@ import CompanyHeader from './CompanyHeader';
 
 const cookies = new Cookies();
 
-const ChanelListContainer = () => {
+const ChanelListContainer = ({
+  isCreating,
+  setIsCreating,
+  setCreateType,
+  setIsEditing,
+}) => {
   const Logout = () => {
     cookies.remove('token');
     cookies.remove('userId');
@@ -32,6 +37,10 @@ const ChanelListContainer = () => {
             <TeamChannelList
               {...listProps}
               type="team"
+              iscreating={isCreating}
+              setIsCreating={setIsCreating}
+              setCreateType={setCreateType}
+              setIsEditing={setIsEditing}
             />
           )}
           Preview={(previewProps) => (
@@ -48,6 +57,10 @@ const ChanelListContainer = () => {
             <TeamChannelList
               {...listProps}
               type="messaging"
+              iscreating={isCreating}
+              setIsCreating={setIsCreating}
+              setCreateType={setCreateType}
+              setIsEditing={setIsEditing}
             />
           )}
           Preview={(previewProps) => (
