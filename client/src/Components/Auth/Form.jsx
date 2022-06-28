@@ -20,9 +20,9 @@ const Form = ({
               </div>
             )}
               <div className="auth__form-container_fields-content_input">
-                  <label htmlFor="username">Username</label>
+                  <label htmlFor="userName">Username</label>
                   <input 
-                      name="username"
+                      name="userName"
                       type="text"
                       placeholder="Username"
                       onChange={(evt) => handleChange(evt)}

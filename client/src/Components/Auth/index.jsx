@@ -4,9 +4,12 @@ import axios from 'axios';
 import Form from './Form';
 import signinImage from '../../assets/signup.jpg';
 
+
+const cookies = new Cookies();
+
 const initialState = {
   fullName: '',
-  username: '',
+  userName: '',
   password: '',
   confirmPassword: '',
   phoneNumber: '',
@@ -24,10 +27,27 @@ const Auth = () => {
     const switchMode = () => {
       setIsSignup((prevIsSignup) => !prevIsSignup);
     };
-    const handleSubmit = (evt) => {
+    const handleSubmit = async (evt) => {
       evt.preventDefault();
-      console.log('YOOO');
-      console.log(form);
+
+      const { fullName, userName, password, phoneNumber, avatarURL } = form;
+      const URL = 'http://localhost:8000/auth';
+
+      const { data: { token, userId, hashedPassword } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
+        userName, password, fullName, phoneNumber, avatarURL,
+      });
+      cookies.set('token', token);
+      cookies.set('userName', userName);
+      cookies.set('fullName', fullName);
+      cookies.set('userId', userId);
+
+      if (isSignup) {
+        cookies.set('phoneNumber', phoneNumber);
+        cookies.set('avatarURL', avatarURL);
+        cookies.set('hashedPassword', hashedPassword);
+      }
+
+      window.location.reload();
     }
   return (
     <div className="auth__form-container">

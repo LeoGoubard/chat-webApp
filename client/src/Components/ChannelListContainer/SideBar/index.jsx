@@ -3,7 +3,7 @@ import HospitalIcon from '../../../assets/hospital.png';
 
 import LogoutIcon from '../../../assets/logout.png';
 
-const SideBar = () => (
+const SideBar = ({ Logout }) => (
     <div className="channel-list__sidebar">
       <div className="channel-list__sidebar__icon1">
         <div className="icon1__inner">
@@ -11,7 +11,7 @@ const SideBar = () => (
         </div>
       </div>
       <div className="channel-list__sidebar__icon2">
-        <div className="icon1__inner">
+        <div className="icon1__inner" onClick={() => Logout()}>
           <img src={LogoutIcon} alt="Logout" width="30" />
         </div>
       </div>
