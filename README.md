@@ -1,5 +1,5 @@
 # Web Chat App
-
+"chat trial expires in 28 days on Jul 27th"
 # Media-Chat - React/Node/stream-chat
 ![Chat-App](https://zupimages.net/up/22/26/1yn8.png)
 
