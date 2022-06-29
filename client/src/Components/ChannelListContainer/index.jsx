@@ -4,7 +4,6 @@ import Cookies from 'universal-cookie';
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from '../';
 import SideBar from './SideBar';
 import CompanyHeader from './CompanyHeader';
-import { initialState } from 'stream-chat-react/dist/components/Channel/channelState';
 
 const cookies = new Cookies();
 
